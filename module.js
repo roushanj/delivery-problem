@@ -1,8 +1,8 @@
 
 const offers = {
         "off001": {
-                "distance": [200, 0],
-                "weigh": [200, 70],
+                "distance": [200, 0],  // 200 is MAX & 0 is Minimum
+                "weigh": [200, 70],  // 200 is MAX & 70 is Minimum
                 "disc": 10
         },
         "off002": {

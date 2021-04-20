@@ -18,6 +18,9 @@ let groupArr = [];
 
 
 groupArr = groupPackage(input, maxWeight);
+if(typeof(groupArr) == 'string') { 
+    console.log(groupArr)
+}else{
 groupArr.sort(function(a, b){
   if(a.length==b.length){
     let x=0, y=0;
@@ -30,7 +33,7 @@ groupArr.sort(function(a, b){
     return y-x;
   }
   return b.length-a.length;
-})
+});
 
 let finalAns = [];
 
@@ -52,7 +55,7 @@ groupArr.forEach(group => {
   vTime = vTime+(2*maxTime);
   vArr.push(vTime);
   vArr.sort();
-})
+});
 finalAns.forEach(item =>{
  var name = item.PKG;
  var offering = item.offering;
@@ -62,4 +65,4 @@ finalAns.forEach(item =>{
  var baseDeliveryCost = 100;
  console.log(calculateDiscount(name,baseDeliveryCost,offering,dist, weigth, totalTime))
 });
-
+}
