@@ -14,11 +14,11 @@
 
 ## Description
 
--> Group.js --> This will return an array according to condition that states 'No PKG weight should be greater than 200 & max package should deliver at once'
+-> Group.js --> This will return an array according to condition that states 'No PKG weight should be greater than N & max package should deliver at once'
 
 -> module.js --> This will return Discounted value of packages and takes user input.
 
--> Offers --> Offers are present in module.js , we change the variable value there only.
+-> Offers --> Offers are present in module.js , we change the variable value there only or we can create JSON file seperate 
 
 
 
