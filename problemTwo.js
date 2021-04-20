@@ -1,4 +1,6 @@
 const calculateDiscount =  require('./module.js');
+const groupPackage = require('./group.js');
+
 let input = JSON.parse(process.argv[5]);
 
 let nVehicle = parseInt(process.argv[2]);
@@ -14,35 +16,8 @@ for(let i=0;i<nVehicle;i++){
 
 let groupArr = [];
 
-function groupPackage(input){
-  while(input.length>0){
-    let x=0, y=0, total=0;
-    let pArr = [];
-    while(y<input.length){
-      if((total+input[y].weight)> maxWeight){
-        if((total+input[y].weight-input[x].weight) <= maxWeight){
-          total = total+input[y].weight-input[x].weight;
-          x++;
-          y++;
-          
-        }else{
-          break;
-        }
-      }
-      else{
-        total = total+input[y].weight;
-        y++;
-      }
-    }
-    for(let i=x;i<y;i++){
-      pArr.push(input[i]);
-    }
-    groupArr.push(pArr);
-    input.splice(x, y-x);
-  }
-}
 
-groupPackage(input);
+groupArr = groupPackage(input, maxWeight);
 groupArr.sort(function(a, b){
   if(a.length==b.length){
     let x=0, y=0;
