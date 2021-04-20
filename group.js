@@ -12,6 +12,12 @@ input.forEach(item=>{
 //console.log(largest)
 if(largest > maxWeight) return "Maximum weight is lesser than PKG weight";
 
+/*
+  Taking Two pointers And looping through the Array,
+  After that matching with the condition and increasing pointer accordingly
+*/
+
+
  while(input.length>0){
     let x=0, y=0, total=0;
     let pArr = [];

@@ -7,7 +7,7 @@ let nVehicle = parseInt(process.argv[2]);
 let vSpeed = parseInt(process.argv[3]);;
 let maxWeight = parseInt(process.argv[4]);;
 
-let vArr = [];
+let vArr = []; // Creating Vehicle Array
 
 for(let i=0;i<nVehicle;i++){
   vArr.push(0);
@@ -17,11 +17,11 @@ for(let i=0;i<nVehicle;i++){
 let groupArr = [];
 
 
-groupArr = groupPackage(input, maxWeight);
-if(typeof(groupArr) == 'string') { 
+groupArr = groupPackage(input, maxWeight); // Calling Grouping Function to Group the PKG according to condition of weight less than xkg
+if(typeof(groupArr) == 'string') { // Error Handling
     console.log(groupArr)
 }else{
-groupArr.sort(function(a, b){
+groupArr.sort(function(a, b){ // Sort the Array
   if(a.length==b.length){
     let x=0, y=0;
     a.forEach(p =>{
@@ -35,14 +35,14 @@ groupArr.sort(function(a, b){
   return b.length-a.length;
 });
 
-let finalAns = [];
+let finalAns = []; // Return Value
 
-function max(a, b){
+function max(a, b){ // To find Max Value
   if(a>b) return a;
   else return b;
 }
 
-groupArr.forEach(group => {
+groupArr.forEach(group => { // Assigning the PKG to vehicle 
   let maxTime = 0;
   let vTime = vArr[0];
   vArr.splice(0,1);
@@ -56,7 +56,8 @@ groupArr.forEach(group => {
   vArr.push(vTime);
   vArr.sort();
 });
-finalAns.forEach(item =>{
+
+finalAns.forEach(item =>{ // adding Discount to the PKG
  var name = item.PKG;
  var offering = item.offering;
  var dist = item.distance;
